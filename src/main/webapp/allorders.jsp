@@ -63,7 +63,7 @@
                     }%>
                 </td>
                 <td><%= order.getOrderLines().size() + " items"%></td>
-                <td><%= order.getDate()%></td>
+                <td><%= order.getDateFormat() %></td>
                 <td><%= order.getPrice()%> DKK</td>
 
                 <td>

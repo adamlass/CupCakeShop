@@ -19,6 +19,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -145,8 +146,11 @@ public class Order_dao {
             
             Calendar cal = Calendar.getInstance();
   
-            Timestamp ts = res.getTimestamp("date");
-            cal.set(ts.getYear(), ts.getMonth(), ts.getDay(), ts.getHours(), ts.getMinutes(), ts.getSeconds());
+            Timestamp date = res.getTimestamp("date");
+            
+            if(date != null){
+            cal.setTimeInMillis(date.getTime());
+            }
             
             orders.add(new Order(res.getInt("idorders"), udao.findUser(res.getString("owner")), res.getDouble("price"), cal, cupCakes));
         }

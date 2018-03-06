@@ -4,6 +4,7 @@
     Author     : adamlass
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="entities.Order"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.List"%>
@@ -61,7 +62,7 @@
 
                 </td>
                 <td><%= order.getOrderLines().size() + " items"%></td>
-                <td><%= order.getDate()%></td>
+                <td><%= order.getDateFormat() %></td>
                 <td><%= order.getPrice()%> DKK</td>
 
             </tr>

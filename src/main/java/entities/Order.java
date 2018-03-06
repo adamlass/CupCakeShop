@@ -5,6 +5,7 @@
  */
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -46,6 +47,11 @@ public class Order {
 
     public List<CupCake> getOrderLines() {
         return orderLines;
+    }
+    
+    public String getDateFormat(){
+         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        return  dateFormat.format(date.getTime());
     }
     
     

@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <td>Date</td>
-                <td><%= order.getDate()%></td>
+                <td><%= order.getDateFormat() %></td>
             </tr>
             <tr>
                 <th>Full Price</th>
