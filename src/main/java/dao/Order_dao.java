@@ -131,8 +131,8 @@ public class Order_dao {
             do {
                 int toppingIndex = res.getInt("topping");
                 int buttomIndex = res.getInt("buttom");
-                CakePart topping = cakeParts.get(toppingIndex - 1);
-                CakePart buttom = cakeParts.get(buttomIndex - 1);
+                CakePart topping = getPart(toppingIndex,cakeParts);
+                CakePart buttom = getPart(buttomIndex,cakeParts);
 
                 cupCakes.add(new CupCake(topping, buttom));
 
@@ -187,6 +187,16 @@ public class Order_dao {
         dbc.close();
     }
 
+    private CakePart getPart(int index, List<CakePart> cakeParts) {
+        for(CakePart cp : cakeParts){
+            if(cp.getDbIndex()== index){
+                return cp;
+            }
+        }
+        return null;
+    }
+
+    
 }
 //  while (res.next()) {
 //            List<CupCake> cupCakes = new ArrayList<>();
