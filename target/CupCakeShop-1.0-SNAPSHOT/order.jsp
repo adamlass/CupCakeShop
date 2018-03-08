@@ -21,6 +21,7 @@
         <link href="styling.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+               <%@include file="menubar.jsp" %>
         <h1>Order <%= idorders%></h1>
         <form action="user.jsp">
             <input type="submit" value="back">

@@ -15,8 +15,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
     <head>
+
+       
+        <link href="styling.css" rel="stylesheet" type="text/css"/>
+        <link href="table.css" rel="stylesheet" type="text/css"/>
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
         <title>User - <%
             MakeAdmin.updateUser(request);
 
@@ -24,11 +32,10 @@
             out.print(user.getName());
             %>
         </title>
-        
-        <link href="styling.css" rel="stylesheet" type="text/css"/>
-        <link href="table.css" rel="stylesheet" type="text/css"/>
+
     </head>
     <body>
+        <%@include file="menubar.jsp" %>
         <h1> 
             <%
                 out.print(user.getName());
@@ -42,13 +49,13 @@
         <form action="orders.jsp" method="get">
             <input type="submit" name="submit" value="See orders for <%= user.getName()%>">
         </form>
-        
+
 
         <h4>Info:</h4>
 
         <font color="<%= user.getColor()%>">
         <a><%
-                out.print("Balance: " + user.getBalance() + " DKK");
+            out.print("Balance: " + user.getBalance() + " DKK");
             %></a>
         </font>
 
@@ -99,11 +106,11 @@
         <form action="allorders.jsp" method="get">
             <input type="submit" name="submit" value="See ALL orders">
         </form>
-        
+
         <%@include file="addcupcake.jsp" %>
-        
+
         <br>
-        
+
         <table width="100%">
             <tr>
                 <th>Username</th>

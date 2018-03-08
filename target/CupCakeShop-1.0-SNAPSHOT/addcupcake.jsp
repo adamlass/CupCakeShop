@@ -1,4 +1,4 @@
-
+<div>
 <br>
 <h3>Add CupCake Part</h3>
         <form action="addcupcakepart" method="post"> 
@@ -16,3 +16,4 @@
             
         </form>
 <br>
+</div>

@@ -14,15 +14,14 @@
         <link href="styling.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form action="login.jsp" method="post">
-            <button type="submit">Log in</button>
-        </form>
+        <%@include file="menubar.jsp" %>
+       
         <h1>CupCakeShop</h1>
         <h5>-by Adam Lass</h5>
-        
-        
-        <img src="images/cupcakes-slider-image.png" alt=""/>
-      
-        
+
+
+        <img src="images/cupcakes-slider-image.png" alt="CupCakeShop"/>
+
+
     </body>
 </html>

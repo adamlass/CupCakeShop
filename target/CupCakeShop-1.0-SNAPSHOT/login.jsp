@@ -10,7 +10,9 @@
         <link href="styling.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>Log in</h1>
+               <%@include file="menubar.jsp" %>
+        <h1 id="cream">Log in</h1>
+        <div class="centerbox">
         <form action="loginControl" method="post">
             <%@include  file="loginform.jsp" %>
         </form>
@@ -26,8 +28,9 @@
             %>
             <br>
             <form action="create-user.jsp" method="post">
-                <button type="submit">Create<br>Account</button>
+                <button type="submit">Create Account</button>
             </form>
+        </div>
 
 
     </body>

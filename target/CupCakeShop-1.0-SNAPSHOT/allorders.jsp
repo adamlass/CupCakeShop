@@ -10,18 +10,25 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>All Orders</title>
         <link href="table.css" rel="stylesheet" type="text/css"/>
         <link href="styling.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+               <%@include file="menubar.jsp" %>
         <h1>List of all orders</h1>
-        
-        <form action="user.jsp">
-            <input type="submit" value="back">
-        </form>
 
+        <div class="col-sm-9">
         <table width="100%">
             <tr>
                 <th>OrderNumber</th>
@@ -70,7 +77,7 @@
                     <!--change price-->
                     <form action="changeprice" method="post">
                         <input type="hidden" name="idorders" value="<%= order.getIdorders()%>">
-                        <input type="text" name="newprice" value="<%= order.getPrice()%>">
+                        <input type="text" name="newprice" value="<%= order.getPrice()%>" size="7" >
                         <input type="submit" name="submit" value="Change price">
                     </form>
                 </td>
@@ -96,5 +103,10 @@
             </tr>
 
         </table>
+        </div>
+                
+                <div class="col-sm-3">
+                    <%@include file="order_1.jsp" %>
+                </div>
     </body>
 </html>

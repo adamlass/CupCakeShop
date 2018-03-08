@@ -10,6 +10,7 @@
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/dao/Order_dao.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/dao/CupCake_dao.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/Purchase.java
+/Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/Logout.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/AddToBalance.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/entities/CupCake.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/dbconnector/DBConnector.java

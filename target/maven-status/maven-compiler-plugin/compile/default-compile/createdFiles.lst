@@ -13,6 +13,7 @@ entities/CakePart.class
 datasource/DataSource.class
 entities/CupCake.class
 servlet/createControl.class
+servlet/Logout.class
 dao/Order_dao.class
 servlet/Purchase.class
 entities/OrderLine.class

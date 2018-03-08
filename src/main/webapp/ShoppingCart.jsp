@@ -6,9 +6,9 @@
 <%@page import="java.util.List"%>
 <%@page import="entities.User"%>
 
-<br>
-<h3>Cart:</h3>
-<table>
+<div id="cart" class="col-sm-12">
+<h3 >Cart:</h3>
+<table class="table table-striped">
     <tr>
         <th>Item</th>
         <th>Price</th>
@@ -27,7 +27,7 @@
     <tr>
         <td> 
             <% if (item.getClass().getSimpleName().equals("CupCake")) {%>
-            <table>
+            <table class="table table-striped">
                 <% List<CakePart> parts = ((CupCake) item).getSubParts();
                     for (CakePart part : parts) {
 
@@ -78,3 +78,4 @@
 <form action="Purchase" method="post">
     <button type="submit">Submit Purchase</button>
 </form>
+</div>

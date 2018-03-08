@@ -12,10 +12,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create user</title>
         <link href="styling.css" rel="stylesheet" type="text/css"/>
+        
+        <!--<link href="cssopg.css" rel="stylesheet" type="text/css"/>-->
     </head>
     <body>
-        <h1>Create user</h1>
+        <%@include file="menubar.jsp" %>
+        <h1 id="cream">Create user</h1>
 
+        <div class="centerbox">
         <form action="createControl" method="post">
             <%@include  file="loginform.jsp" %>
         </form>
@@ -39,5 +43,7 @@
         <form action="login.jsp" method="post">
                 <button type="submit">Log in<br>with account</button>
             </form>
+        </div>
     </body>
 </html>
+

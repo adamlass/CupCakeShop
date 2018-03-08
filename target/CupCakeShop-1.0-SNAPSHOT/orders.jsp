@@ -14,13 +14,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="styling.css" rel="stylesheet" type="text/css"/>
         <% User user = (User) session.getAttribute("user");%>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="table.css" rel="stylesheet" type="text/css"/>
+       
         <title><%= "" + user.getName() + "'s orders"%></title>
-        <link href="styling.css" rel="stylesheet" type="text/css"/>
+      
     </head>
     <body>
+             <%@include file="menubar.jsp" %>  
         <h1><%= "" + user.getName() + "'s orders"%></h1>
 
         <form action="user.jsp">
