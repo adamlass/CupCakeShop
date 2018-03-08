@@ -82,7 +82,7 @@
             
         <%@include file="ShoppingCart.jsp" %>
 
-
+<div class="col-sm-6">
         <%  try {
                         if (request.getParameter("purchase").equals("true")) { %>
         <h4>Transaction complete<br>Thank you for the purchase!</h4>
@@ -103,7 +103,7 @@
 
             }
         %>
-
+</div>
 
 
 

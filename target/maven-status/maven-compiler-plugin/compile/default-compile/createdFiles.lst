@@ -25,3 +25,4 @@ entities/User.class
 servlet/AddToBalance.class
 entities/ShoppingCart.class
 comparators/usernamecomparator.class
+servlet/SetView.class

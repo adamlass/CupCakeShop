@@ -59,7 +59,7 @@
             %>
             <tr>
                 <td>
-                    <form action="order.jsp" method="post">
+                    <form action="allorders.jsp" method="post">
                         <input type="hidden" name="idorders" value="<%= order.getIdorders()%>">
                         <input type="submit" name="submit" value="Order <%= order.getIdorders()%>">
                     </form>
@@ -106,7 +106,9 @@
         </div>
                 
                 <div class="col-sm-3">
-                    <%@include file="order_1.jsp" %>
+                    <%if(request.getParameter("idorders") != null){ %>
+                    <%@include file="order_1.jsp"%>
+                    <%} %>
                 </div>
     </body>
 </html>

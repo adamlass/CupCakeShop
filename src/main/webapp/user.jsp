@@ -18,7 +18,7 @@
 
     <head>
 
-       
+
         <link href="styling.css" rel="stylesheet" type="text/css"/>
         <link href="table.css" rel="stylesheet" type="text/css"/>
 
@@ -42,54 +42,54 @@
             %>
         </h1>
 
-        <form action="configurator.jsp" method="post">
-            <button type="submit">Configure your cupcake!</button>
-        </form>
+     
         <br>
         <form action="orders.jsp" method="get">
             <input type="submit" name="submit" value="See orders for <%= user.getName()%>">
         </form>
 
 
-        <h4>Info:</h4>
+        <div>
+            <h4>Info:</h4>
 
-        <font color="<%= user.getColor()%>">
-        <a><%
-            out.print("Balance: " + user.getBalance() + " DKK");
-            %></a>
-        </font>
+            <font color="<%= user.getColor()%>">
+            <a><%
+                out.print("Balance: " + user.getBalance() + " DKK");
+                %></a>
+            </font>
 
 
-        <br>
-        <br>
-        <a>Add to balance</a>
+            <br>
+            <br>
+            <a>Add to balance</a>
 
-        <form action="AddToBalance" method="post">
-            <input type="text" name="amount">DKK
-            <input type="submit" value="Add to balance">
-            <%
+            <form action="AddToBalance" method="post">
+                <input type="text" name="amount">DKK
+                <input type="submit" value="Add to balance">
+                <%
                 request.getSession().setAttribute("balmoduser", user); %>
-        </form>
+            </form>
 
-        <a>
-            <%
-                try {
-                    String status = request.getParameter("status");
-                    if (status.equals("true")) {
-                        out.print("Funds were added to account");
-                    } else if (status.equals("false")) {
-                        out.print("Transaction failed!");
-                    } else if (status.equals("invalid")) {
-                        out.print("Amount can't be 0 or negative");
+            <a>
+                <%
+                    try {
+                        String status = request.getParameter("status");
+                        if (status.equals("true")) {
+                            out.print("Funds were added to account");
+                        } else if (status.equals("false")) {
+                            out.print("Transaction failed!");
+                        } else if (status.equals("invalid")) {
+                            out.print("Amount can't be 0 or negative");
+                        }
+                    } catch (Exception e) {
+
                     }
-                } catch (Exception e) {
-
-                }
-            %>
+                %>
 
 
 
-        </a>
+            </a>
+        </div>
 
 
 

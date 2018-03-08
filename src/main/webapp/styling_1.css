@@ -38,4 +38,7 @@ body { margin: 0;}
     border: 1px solid grey;
     background-color: whitesmoke;
 }
+#nopad{
+    padding: 0;
+}
 
