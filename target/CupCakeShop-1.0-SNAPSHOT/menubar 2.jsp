@@ -1,4 +1,4 @@
-
+<div id="scroll">
 <%@page import="entities.User"%>
 <ul>
     
@@ -32,3 +32,4 @@
     </li>
     <% } %>
 </ul>
+</div>

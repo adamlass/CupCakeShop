@@ -1,5 +1,5 @@
 
-
+<div id="scroll">
 <%@page import="entities.CupCake"%>
 <%@page import="entities.Order"%>
 <%@page import="dao.Order_dao"%>
@@ -47,3 +47,4 @@
 
             <% }%>
         </table>
+</div>
