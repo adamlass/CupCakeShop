@@ -24,19 +24,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Configurator</title>
         <link href="menustyle.css" rel="stylesheet" type="text/css"/>
-        <style>
-            #piccake{
-                height: 1000px;
-                width: auto;
-            }
-        </style>
+  
 
         <!--                <link href="table.css" rel="stylesheet" type="text/css"/>
                         <link href="styling.css" rel="stylesheet" type="text/css"/>-->
     </head>
     <body>
         <%@include file="menubar.jsp" %>
-        <div id="piccake" class="col-sm-6">
+        <div class="col-sm-6">
             <h1>CupCake Configurator</h1>
             
             <!--<div id="piccake">-->
