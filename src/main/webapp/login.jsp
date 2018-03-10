@@ -12,7 +12,7 @@
     <body>
                <%@include file="menubar.jsp" %>
         <h1 id="cream">Log in</h1>
-        <div class="centerbox">
+        <div class="brownbox">
         <form action="loginControl" method="post">
             <%@include  file="loginform.jsp" %>
         </form>

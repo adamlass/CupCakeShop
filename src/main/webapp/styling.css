@@ -53,7 +53,7 @@ div1{
     margin: auto;
 }
 
-div{
+.brownbox{
     padding: 10px;
     text-align: center;
     background-color: white;
@@ -108,4 +108,6 @@ body { margin: 0;}
 #nopad{
     padding: 0;
 }
+
+
 

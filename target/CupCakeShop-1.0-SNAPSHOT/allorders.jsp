@@ -21,6 +21,7 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>All Orders</title>
+        <link href="scroll.css" rel="stylesheet" type="text/css"/>
         <link href="table.css" rel="stylesheet" type="text/css"/>
         <link href="styling.css" rel="stylesheet" type="text/css"/>
     </head>

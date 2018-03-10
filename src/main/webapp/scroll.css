@@ -7,6 +7,11 @@ and open the template in the editor.
     Created on : 08-03-2018, 16:19:17
     Author     : adamlass
 */
-/*#scroll{
-    height: 100 px;
-}*/
+#scroll{
+ padding: 10px;
+    text-align: center;
+    background-color: white;
+
+    border: 6px solid #8B4513;
+    background-color: whitesmoke;
+}

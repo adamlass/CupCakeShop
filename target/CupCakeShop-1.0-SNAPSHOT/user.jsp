@@ -42,15 +42,12 @@
             %>
         </h1>
 
-     
+
         <br>
-        <form action="orders.jsp" method="get">
-            <input type="submit" name="submit" value="See orders for <%= user.getName()%>">
-        </form>
 
 
-        <div>
-            <h4>Info:</h4>
+        <div class="brownbox">
+            <h4>Add to balance:</h4>
 
             <font color="<%= user.getColor()%>">
             <a><%
@@ -67,7 +64,7 @@
                 <input type="text" name="amount">DKK
                 <input type="submit" value="Add to balance">
                 <%
-                request.getSession().setAttribute("balmoduser", user); %>
+                    request.getSession().setAttribute("balmoduser", user); %>
             </form>
 
             <a>
@@ -103,12 +100,11 @@
         <% if (user.isAdmin()) {
         %>
         <h1>ADMIN:</h1>
-        <form action="allorders.jsp" method="get">
-            <input type="submit" name="submit" value="See ALL orders">
-        </form>
 
-        <%@include file="addcupcake.jsp" %>
 
+        <div class="brownbox">
+            <%@include file="addcupcake.jsp" %>
+        </div>
         <br>
 
         <table width="100%">
