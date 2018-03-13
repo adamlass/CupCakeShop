@@ -1,0 +1,14 @@
+@startuml
+
+Configurator.jsp -> Purchase: Shoppingcart & User
+Purchase -> User_dao: addFunds()
+User_dao -> CupCakeShopDB: exequteQuery()
+Purchase -> Order_dao: makeOrder()
+Order_dao -> CupCakeShopDB: exequteQuery()
+Order_dao -> CupCakeShopDB: query()
+CupCakeShopDB -> Order_dao: resultSet
+Order_dao -> CupCakeShopDB: exequte()
+Purchase -> MakeAdmin: updateUser()
+Purchase -> Configurator.jsp: true
+
+@enduml
