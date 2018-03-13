@@ -1,0 +1,33 @@
+@startuml
+title: Cupcake State Machine Diagram
+
+class index
+class login
+class create-user
+class user
+class configurator
+class orders
+class order
+class menu
+
+menu --> login : Login
+menu --> index : Front page
+menu --> user : User
+menu --> configurator : Configure cupcake
+menu --> index : Logout
+login --> user : Login
+login --> "create-user" : Create new user
+"create-user" --> login : Login
+"create-user" --> user : Create user
+user -- user : Add funds
+menu --> orders : View orders
+orders --> order : View order
+orders --> user : Back
+order --> user : Back
+configurator -- configurator : Add to cart | Submit purchase | Delete cupcake | Update
+
+
+hide methods
+hide circle
+hide attribute
+@enduml
