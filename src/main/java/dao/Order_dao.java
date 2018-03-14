@@ -19,7 +19,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -89,7 +88,7 @@ public class Order_dao {
     }
 
     private List<Order> userOrders(String owner, int singleIndex, boolean single, boolean all) throws SQLException {
-        user_dao udao = new user_dao();
+        User_dao udao = new User_dao();
         CupCake_dao cdao = new CupCake_dao();
  
         dbc.open();

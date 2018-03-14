@@ -1,0 +1,37 @@
+@startuml
+title: Admin Cupcake State Machine Diagram
+
+class frontpage
+class login
+class create-user
+class user
+class cupcake-configurator
+class orders
+class order
+package Global #DDDDDD{
+class NavBar
+}
+class AllOrders
+
+NavBar --> login : Log in
+NavBar --> frontpage : Front page
+NavBar --> user : User
+NavBar --> "cupcake-configurator" : Configure cupcake
+NavBar --> AllOrders : Show all Orders
+NavBar --> frontpage : Logout
+NavBar --> orders : View orders
+login --> user : Login
+login --> "create-user" : Create new user
+"create-user" --> login : Login
+"create-user" --> user : Create user
+orders --> order : View order
+orders --> user : Back
+order --> user : Back
+"cupcake-configurator" -- "cupcake-configurator" : Add to cart | Submit purchase | Delete cupcake | Update
+user -- user : Add funds | Add cupcake | Make Admin | Delete
+AllOrders -- AllOrders : Delete order | Edit order | Show order
+
+hide methods
+hide circle
+hide attribute
+@enduml

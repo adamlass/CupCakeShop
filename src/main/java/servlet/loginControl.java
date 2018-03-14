@@ -5,7 +5,7 @@
  */
 package servlet;
 
-import dao.user_dao;
+import dao.User_dao;
 import entities.ShoppingCart;
 import entities.User;
 import java.io.IOException;
@@ -41,7 +41,7 @@ public class loginControl extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        user_dao dao = new user_dao();
+        User_dao dao = new User_dao();
         User user = dao.findUser(username, password);
         if (user == null) {
             response.sendRedirect("login.jsp?status=false");

@@ -18,11 +18,11 @@ import java.util.List;
  *
  * @author adamlass
  */
-public class user_dao {
+public class User_dao {
 
     DBConnector dbc;
 
-    public user_dao() {
+    public User_dao() {
         this.dbc = new DBConnector(new DataSource().getDataSource());
     }
 
@@ -155,7 +155,7 @@ public class user_dao {
         dbc.close();
     }
 
-    public User addFunds(User balmoduser, double amount) throws SQLException {
+    public User updateFunds(User balmoduser, double amount) throws SQLException {
         User user = findUser(balmoduser.getName());
         dbc.open();
 

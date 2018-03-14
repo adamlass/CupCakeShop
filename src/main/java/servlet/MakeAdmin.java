@@ -5,7 +5,7 @@
  */
 package servlet;
 
-import dao.user_dao;
+import dao.User_dao;
 import entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,7 +40,7 @@ public class MakeAdmin extends HttpServlet {
         
     
         String name = request.getParameter("adminname");
-        user_dao dao = new user_dao();
+        User_dao dao = new User_dao();
         dao.toggleAdmin(name);
         
         updateUser(request);
@@ -51,7 +51,7 @@ public class MakeAdmin extends HttpServlet {
     }
     
     public static void updateUser(HttpServletRequest request) throws SQLException{
-        user_dao dao = new user_dao();
+        User_dao dao = new User_dao();
         User curUser = (User) request.getSession().getAttribute("user");
         request.getSession().setAttribute("user", dao.findUser(curUser.getName()));
     }

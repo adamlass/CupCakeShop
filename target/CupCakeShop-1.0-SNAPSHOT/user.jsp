@@ -9,7 +9,7 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.Collection"%>
-<%@page import="dao.user_dao"%>
+<%@page import="dao.User_dao"%>
 <%@page import="entities.User"%>
 <%@page import="comparators.usernamecomparator" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -117,7 +117,7 @@
 
             </tr>
             <%
-                user_dao userdao = new user_dao();
+                User_dao userdao = new User_dao();
                 List<User> users = userdao.getAll();
                 Collections.sort(users, new usernamecomparator());
 

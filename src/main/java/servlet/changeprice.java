@@ -6,7 +6,7 @@
 package servlet;
 
 import dao.Order_dao;
-import dao.user_dao;
+import dao.User_dao;
 import entities.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -43,7 +43,7 @@ public class changeprice extends HttpServlet {
             double newprice = Double.parseDouble(request.getParameter("newprice"));
             int idorders = Integer.parseInt(request.getParameter("idorders"));
             Order_dao odao = new Order_dao();
-            user_dao udao = new user_dao();
+            User_dao udao = new User_dao();
 
             Order order = odao.getOrder(idorders);
             
@@ -54,7 +54,7 @@ public class changeprice extends HttpServlet {
             }
 
             odao.changePrice(idorders, newprice);
-            udao.addFunds(order.getOwner(), diff);
+            udao.updateFunds(order.getOwner(), diff);
             
 
         } catch (IllegalArgumentException e) {

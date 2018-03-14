@@ -21,7 +21,7 @@
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/entities/CakePart.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/datasource/DataSource.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/changeprice.java
-/Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/dao/user_dao.java
+/Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/dao/User_dao.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/DeleteItem.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/MakeAdmin.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/deleteorder.java

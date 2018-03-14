@@ -6,7 +6,7 @@
 package servlet;
 
 import dao.Order_dao;
-import dao.user_dao;
+import dao.User_dao;
 import entities.ShoppingCart;
 import entities.User;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class Purchase extends HttpServlet {
         //TODO turn trycatch back on
 
         try {
-            user_dao dao = new user_dao();
+            User_dao dao = new User_dao();
 
             //new user
             User user = dao.findUser(((User) request.getSession().getAttribute("user")).getName());
@@ -53,7 +53,7 @@ public class Purchase extends HttpServlet {
                 throw new InvalidActivityException();
             }
 
-            dao.addFunds(user, -shoppingCart.getPrice());
+            dao.updateFunds(user, -shoppingCart.getPrice());
 //            
             Order_dao odao = new Order_dao();
             odao.makeOrder(user, shoppingCart);

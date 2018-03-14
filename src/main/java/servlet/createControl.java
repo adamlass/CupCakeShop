@@ -5,7 +5,7 @@
  */
 package servlet;
 
-import dao.user_dao;
+import dao.User_dao;
 import entities.ShoppingCart;
 import entities.User;
 import java.io.IOException;
@@ -44,10 +44,10 @@ public class createControl extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        User user = new user_dao().createUser(username, password);
+        User user = new User_dao().createUser(username, password);
 
         if (user != null) {
-            request.getSession().setAttribute("user", new user_dao().findUser(username));
+            request.getSession().setAttribute("user", new User_dao().findUser(username));
             response.sendRedirect("user.jsp");
             request.getSession().setAttribute("ShoppingCart", new ShoppingCart());
 

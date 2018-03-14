@@ -5,7 +5,7 @@
  */
 package servlet;
 
-import dao.user_dao;
+import dao.User_dao;
 import entities.User;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -47,8 +47,8 @@ public class AddToBalance extends HttpServlet {
                 throw new IllegalArgumentException();
             }
 
-            user_dao dao = new user_dao();
-            dao.addFunds(balmoduser, amount);
+            User_dao dao = new User_dao();
+            dao.updateFunds(balmoduser, amount);
         } catch (IllegalArgumentException in) {
             MakeAdmin.updateUser(request);
             response.sendRedirect("user.jsp?status=invalid");

@@ -4,7 +4,7 @@
     Author     : adamlass
 --%>
 
-<%@page import="dao.user_dao"%>
+<%@page import="dao.User_dao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

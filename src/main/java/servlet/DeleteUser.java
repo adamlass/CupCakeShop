@@ -5,7 +5,7 @@
  */
 package servlet;
 
-import dao.user_dao;
+import dao.User_dao;
 import java.io.IOException;
 import entities.User;
 import java.io.PrintWriter;
@@ -39,7 +39,7 @@ public class DeleteUser extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String name = request.getParameter("username");
-        user_dao dao = new user_dao();
+        User_dao dao = new User_dao();
         dao.deleteUser(name);
 
         MakeAdmin.updateUser(request);

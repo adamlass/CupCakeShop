@@ -4,7 +4,6 @@ entities/Order.class
 servlet/loginControl.class
 dao/Object_dao.class
 servlet/MakeAdmin.class
-dao/user_dao.class
 servlet/DeleteItem.class
 servlet/AddToCart.class
 dao/CupCake_dao.class
@@ -16,6 +15,7 @@ servlet/createControl.class
 servlet/Logout.class
 dao/Order_dao.class
 servlet/Purchase.class
+dao/User_dao.class
 entities/OrderLine.class
 dbconnector/DBConnector.class
 servlet/deleteorder.class

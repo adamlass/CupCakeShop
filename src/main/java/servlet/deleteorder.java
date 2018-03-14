@@ -8,7 +8,7 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import dao.Order_dao;
-import dao.user_dao;
+import dao.User_dao;
 import entities.Order;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,9 +38,9 @@ public class deleteorder extends HttpServlet {
         try {
             int idorders = Integer.parseInt(request.getParameter("idorders"));
             Order_dao odao = new Order_dao();
-            user_dao udao = new user_dao();
+            User_dao udao = new User_dao();
             Order order = odao.getOrder(idorders);
-            udao.addFunds(order.getOwner(), order.getPrice());
+            udao.updateFunds(order.getOwner(), order.getPrice());
 
             odao.deleteOrder(idorders);
 
