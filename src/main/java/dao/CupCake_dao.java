@@ -15,17 +15,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * This is a datamapper/dao that reads and writes data via a database connection.
  *
+ * Every method uses PreparedStatements to prevent user injections.
+ * 
  * @author adamlass
  */
 public class CupCake_dao {
 
     DBConnector dbc;
 
+    /**
+     * Initiating the connection
+     */
     public CupCake_dao() {
         this.dbc = new DBConnector(new DataSource().getDataSource());
     }
 
+    /**
+     * Use this method to get a list of CakeParts of a given type
+     * 
+     * 
+     * @param type
+     * 
+     * There are two types of CakeParts:
+     * 
+     * 1. topping
+     * 2. buttom
+     * 
+     * @return List of Cakeparts of the given type
+     * @throws SQLException 
+     */
     public List<CakePart> getParts(String type) throws SQLException {
         List<CakePart> result = new ArrayList();
         dbc.open();
@@ -48,6 +68,16 @@ public class CupCake_dao {
         return result;
     }
 
+    /**
+     * Given a name and type this method will return a CakePart object read from
+     * the database
+     * 
+     * @param name name of the CakePart
+     * @param type type of the CakePart
+     * 
+     * @return CakePart
+     * @throws SQLException 
+     */
     public CakePart getPart(String name, String type) throws SQLException {
         dbc.open();
 
@@ -68,6 +98,14 @@ public class CupCake_dao {
         return cp;
     }
 
+    /**
+     * Use to add a CakePart to the database
+     * 
+     * @param name the desired name of the new CakePart
+     * @param type the desired type of the new CakePart
+     * @param price the desired price of the new CakePart
+     * @throws SQLException 
+     */
     public void addPart(String name, String type, double price) throws SQLException {
         dbc.open();
         
