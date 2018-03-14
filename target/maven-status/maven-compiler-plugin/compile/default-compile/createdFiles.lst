@@ -16,7 +16,6 @@ servlet/Logout.class
 dao/Order_dao.class
 servlet/Purchase.class
 dao/User_dao.class
-entities/OrderLine.class
 dbconnector/DBConnector.class
 servlet/deleteorder.class
 interfaces/Item.class

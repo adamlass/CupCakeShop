@@ -4,7 +4,6 @@
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/addcupcakepart.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/comparators/usernamecomparator.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/entities/Order.java
-/Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/entities/OrderLine.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/UpdateAmount.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/servlet/createControl.java
 /Users/adamlass/Documents/GitHub/CupCakeShop/src/main/java/dao/Order_dao.java
