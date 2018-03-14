@@ -2,7 +2,6 @@ servlet/DeleteUser.class
 servlet/addcupcakepart.class
 entities/Order.class
 servlet/loginControl.class
-dao/Object_dao.class
 servlet/MakeAdmin.class
 servlet/DeleteItem.class
 servlet/AddToCart.class
