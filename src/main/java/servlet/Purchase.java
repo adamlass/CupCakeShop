@@ -53,8 +53,7 @@ public class Purchase extends HttpServlet {
                 throw new InvalidActivityException();
             }
 
-            dao.updateFunds(user, -shoppingCart.getPrice());
-//            
+            dao.updateFunds(user, -shoppingCart.getPrice());        
             Order_dao odao = new Order_dao();
             odao.makeOrder(user, shoppingCart);
 
