@@ -50,6 +50,12 @@ public class MakeAdmin extends HttpServlet {
         
     }
     
+    /**
+     * This is a static method used to update the user object in the session 
+     * correct data from the database.
+     * @param request The current HttpServletRequest
+     * @throws SQLException if the user is not found.
+     */
     public static void updateUser(HttpServletRequest request) throws SQLException{
         User_dao dao = new User_dao();
         User curUser = (User) request.getSession().getAttribute("user");

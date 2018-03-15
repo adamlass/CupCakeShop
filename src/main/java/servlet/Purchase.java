@@ -22,8 +22,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author adamlass
+ * Use this servlet when making a purchase.
+ * The servlet uses the Order_dao to write the order in the database.
+ * 
+ * Attributes needed in the session:
+ * 
+ * 1. User object
+ * 2. ShoppingCart object 
+ * 
+ * 
  */
 @WebServlet(name = "Purchase", urlPatterns = {"/Purchase"})
 public class Purchase extends HttpServlet {
@@ -31,6 +38,7 @@ public class Purchase extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * 
      *
      * @param request servlet request
      * @param response servlet response

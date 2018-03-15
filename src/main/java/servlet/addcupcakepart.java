@@ -48,11 +48,12 @@ public class addcupcakepart extends HttpServlet {
             
             
         } catch (Exception e) {
-        response.sendRedirect("user.jsp?status=false");
+        response.sendRedirect("user.jsp?NewCupCakeAdding=false");
 
+        return;
         }
 
-        response.sendRedirect("user.jsp?status=true");
+        response.sendRedirect("user.jsp?NewCupCakeAdding=true");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
