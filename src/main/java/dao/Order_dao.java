@@ -22,22 +22,34 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
+ * This is a datamapper/dao that reads and writes data via a database connection.
  *
+ * Every method uses PreparedStatements to prevent user injections.
+ * 
  * @author adamlass
  */
 public class Order_dao {
 
     DBConnector dbc;
 
+    /**
+     * Initiating the connection
+     */
     public Order_dao() {
         this.dbc = new DBConnector(new DataSource().getDataSource());
     }
 
+    /**
+     * Write an order on the database with this method.
+     * 
+     * @param owner An object of the user that is the "owner" of the purchase
+     * @param shoppingCart The shoppingcart with all the CupCakes
+     * @throws SQLException 
+     */
     public void makeOrder(User owner, ShoppingCart shoppingCart) throws SQLException {
         dbc.open();
 
         String sql = "INSERT INTO orders (owner,price) VALUES (?, ?)";
-//        String sql = "INSERT INTO orders (name) VALUES (?)";
 
         PreparedStatement pre = dbc.preparedStatement(sql);
 
@@ -48,7 +60,6 @@ public class Order_dao {
 
         sql = "select * from orders";
 
-        //TODO takes worng index
         ResultSet res = dbc.query(sql);
         res.last();
         int index = Integer.parseInt(res.getString("idorders"));
@@ -75,6 +86,7 @@ public class Order_dao {
         dbc.close();
     }
     
+    
     public Order getOrder(int index) throws SQLException{
         return userOrders("", index, true,false).get(0);
     }
@@ -87,6 +99,21 @@ public class Order_dao {
         return userOrders(null, 0, false, true);
     }
 
+    /**
+     * This is a multi-purpose method for reading orderdata from the database.
+     * 
+     * The method should be used in an overloaded method that is more specific
+     * for the purpose.
+     * 
+     * @param owner the name of the owner in the database
+     * @param singleIndex used together with the 'single' parameter if we only 
+     * want a specific order added to the returned list.
+     * 
+     * @param single We only want to return a specific order
+     * @param all We want all the the orders returned
+     * @return A list of the orders recieved from the database
+     * @throws SQLException 
+     */
     private List<Order> userOrders(String owner, int singleIndex, boolean single, boolean all) throws SQLException {
         User_dao udao = new User_dao();
         CupCake_dao cdao = new CupCake_dao();

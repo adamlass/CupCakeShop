@@ -43,13 +43,20 @@ public class loginControl extends HttpServlet {
 
         User_dao dao = new User_dao();
         User user = dao.findUser(username, password);
-        if (user == null) {
-            response.sendRedirect("login.jsp?status=false");
-        } else {
-            request.getSession().setAttribute("user", dao.findUser(username, null));
-            request.getSession().setAttribute("ShoppingCart", new ShoppingCart());
-            response.sendRedirect("user.jsp");
+        
+        //if there was a result in the database
+        if (user != null) {
+            
+            //check that the passwords match perfectly (database doesn't check
+            // for captital differences)
+            if (user.getPassword().equals(password)) {
+                request.getSession().setAttribute("user", dao.findUser(username, null));
+                request.getSession().setAttribute("ShoppingCart", new ShoppingCart());
+                response.sendRedirect("user.jsp");
+                return;
+            }
         }
+        response.sendRedirect("login.jsp?status=false");
 
     }
 
