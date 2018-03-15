@@ -15,31 +15,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * This class is a datamapper used to read and write userdata to the database
+ * reached via the DBConnector.
+ * 
  * @author adamlass
  */
 public class User_dao {
 
     DBConnector dbc;
 
+    /**
+     * Initiation the database connection
+     */
     public User_dao() {
         this.dbc = new DBConnector(new DataSource().getDataSource());
     }
 
-    public boolean connectiontest() throws SQLException {
-        dbc.open();
-        ResultSet res = dbc.query("SELECT * FROM cupcakeshop.test");
-        boolean test = res.next();
-
-        dbc.close();
-        return test;
-
-    }
-
+    /**
+     * Saving a user to the database without isAdmin or balance specified.
+     * This method sets isAdmin to false and the balance to 0
+     * 
+     * @param username Desired username
+     * @param password Desired password (not enctrypted when stored in the 
+     * database)
+     * @return The userobject of the user created
+     * @throws SQLException If the user already exists (double entry)
+     */
     public User createUser(String username, String password) throws SQLException {
         return createUser(username, password, false, 0);
     }
 
+    /**
+     * Save a user to the database.
+     * 
+     * @param username A unique username (primary key in database)
+     * @param password Password for log in (not encrypted)
+     * @param isAdmin the user type: true if the user isAdmin and
+     * false if it's a regular user.
+     * @param balance the balance of the user.
+     * @return A userobject of the user created in the database.
+     * @throws SQLException If the user already exists (double entry)
+     */
     public User createUser(String username, String password, boolean isAdmin, double balance) throws SQLException {
         if (findUser(username, null) != null) {
             return null;
@@ -68,10 +84,18 @@ public class User_dao {
         return null;
     }
 
+    /**
+     * Find a user in the database and return it as an User object.
+     * @param username The username of the user that you want to find.
+     * @return The userobject from the database. If user is not found it will 
+     * return null.
+     * @throws SQLException 
+     */
     public User findUser(String username) throws SQLException {
         return findUser(username, null);
     }
 
+    
     public User findUser(String username, String password) throws SQLException {
         User result = null;
         dbc.open();

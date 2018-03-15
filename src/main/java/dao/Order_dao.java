@@ -86,15 +86,34 @@ public class Order_dao {
         dbc.close();
     }
     
-    
+    /**
+     * Find a single order in the database.
+     * 
+     * @param index the index of the order in the database (IdOrders)
+     * @return orderobject
+     * @throws SQLException 
+     */
     public Order getOrder(int index) throws SQLException{
         return userOrders("", index, true,false).get(0);
     }
     
+    /**
+     * Find all the orders for any given user (the owner)
+     * 
+     * @param owner the username of the person that you want to have the list
+     * of orders from
+     * @return A list of order objects made by the owner (can be empty)
+     * @throws SQLException 
+     */
     public List<Order> userOrders(String owner) throws SQLException{
         return userOrders(owner, 0, false,false);
     }
     
+    /**
+     * Find all the orders from the Orders table in the database.
+     * @return Order objects of all the orders in the database.
+     * @throws SQLException 
+     */
     public List<Order> allOrders() throws SQLException{
         return userOrders(null, 0, false, true);
     }
