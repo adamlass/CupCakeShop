@@ -95,7 +95,16 @@ public class User_dao {
         return findUser(username, null);
     }
 
-    
+    /**
+     * Find a user with a username and password. If the the password dont match, 
+     * there will no be any results.
+     * 
+     * @param username The username of the user
+     * @param password The password for the user. Leave null if you only want
+     * to find the user with its name and not for logging in.
+     * @return
+     * @throws SQLException 
+     */
     public User findUser(String username, String password) throws SQLException {
         User result = null;
         dbc.open();
@@ -127,6 +136,12 @@ public class User_dao {
         return result;
     }
 
+    /**
+     * Get a list of all the users in the database.
+     * 
+     * @return A list of all the users in the database
+     * @throws SQLException 
+     */
     public List<User> getAll() throws SQLException {
         List<User> users = new ArrayList<>();
 
@@ -147,6 +162,14 @@ public class User_dao {
         return users;
     }
 
+    /**
+     * Toggle the user type between standard user and admin.
+     * 
+     * @param username The username of the user that we want to toggle admin 
+     * status on.
+     * 
+     * @throws SQLException If the user is not found.
+     */
     public void toggleAdmin(String username) throws SQLException {
         User u = findUser(username);
         boolean newadmin = !u.isAdmin();
@@ -166,6 +189,12 @@ public class User_dao {
         
     }
 
+    /**
+     * Use to delete users from the database. 
+     * 
+     * @param username The username of the user that you want to delete.
+     * @throws SQLException If the user is not found.
+     */
     public void deleteUser(String username) throws SQLException {
         dbc.open();
 
@@ -179,6 +208,16 @@ public class User_dao {
         dbc.close();
     }
 
+    /**
+     * Use to update the balance of a user. The purpose can both be adding and 
+     * removing funds.
+     * 
+     * @param balmoduser The user that we want to modify the balance on
+     * @param amount The amount that will be added to the balance (if negative 
+     * it will remove funds.)
+     * @return An updated new user object.
+     * @throws SQLException If user is not found.
+     */
     public User updateFunds(User balmoduser, double amount) throws SQLException {
         User user = findUser(balmoduser.getName());
         dbc.open();

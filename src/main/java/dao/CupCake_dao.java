@@ -60,7 +60,7 @@ public class CupCake_dao {
         while (res.next()) {
             int dbIndex = res.getInt("id");
             String name = res.getString("name");
-            int price = res.getInt("price");
+            double price = res.getDouble("price");
             result.add(new CakePart(dbIndex, name, price));
         }
 
